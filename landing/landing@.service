@@ -9,7 +9,7 @@ ExecStartPre=-/usr/bin/docker kill landing%i
 ExecStartPre=-/usr/bin/docker rm landing%i
 ExecStartPre=/usr/bin/docker pull eightyeight/cbm-landing
 ExecStart=/usr/bin/docker run --name landing%i -p 9000:80 eightyeight/cbm-landing
-ExecStartPost=/usr/bin/etcdctl set /vulcand/backends/landing/servers/s%i '{"URL": "http://${COREOS_PUBLIC_IPV4}:9000"}'
+ExecStartPost=/usr/bin/etcdctl set /vulcand/backends/landing/servers/s%i "{\"URL\": \"http://${COREOS_PUBLIC_IPV4}:9000\"}"
 ExecStopPre=/usr/bin/etcdctl rm /vulcand/backends/landing/servers/s%i
 ExecStop=/usr/bin/docker stop landing%i
 
