@@ -2,6 +2,12 @@
 
 Experiments in deploying CoreOS.
 
+## Making servers
+
+    curl -get https://discovery.etcd.io/new?size=1
+
+Paste the result into [user-data](./user-data).
+
 ## Getting in
 
     ssh-add ~/.ssh/id_rsa
