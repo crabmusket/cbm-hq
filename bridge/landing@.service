@@ -1,5 +1,6 @@
 [Unit]
-Description=Landing page
+Description=Landing page instance %i
+Requires=docker.service
 After=docker.service
 
 [Service]
@@ -8,10 +9,11 @@ EnvironmentFile=/etc/environment
 ExecStartPre=-/usr/bin/docker kill landing%i
 ExecStartPre=-/usr/bin/docker rm landing%i
 ExecStartPre=/usr/bin/docker pull eightyeight/cbm-landing
-ExecStart=/usr/bin/docker run --name landing%i -p 9000:80 eightyeight/cbm-landing
-ExecStartPost=/usr/bin/etcdctl set /vulcand/backends/landing/servers/s%i "{\"URL\": \"http://${COREOS_PUBLIC_IPV4}:9000\"}"
-ExecStopPre=/usr/bin/etcdctl rm /vulcand/backends/landing/servers/s%i
+ExecStart=/usr/bin/docker run --name landing%i -p ${COREOS_PRIVATE_IPV4}:9000:80 eightyeight/cbm-landing
+ExecStartPost=/usr/bin/etcdctl set /vulcand/backends/landing/servers/s%i "{\"URL\": \"http://${COREOS_PRIVATE_IPV4}:9000\"}"
+ExecStop=/usr/bin/etcdctl rm /vulcand/backends/landing/servers/s%i
 ExecStop=/usr/bin/docker stop landing%i
+ExecStopPost=/usr/bin/docker rm landing%i
 
 [X-Fleet]
 X-Conflicts=landing@*.service
