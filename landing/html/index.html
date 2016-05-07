@@ -1,74 +1,81 @@
 <!doctype html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>the crabmusket</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href='http://fonts.googleapis.com/css?family=Averia+Serif+Libre' rel='stylesheet' type='text/css'>
-    </head>
-    <body>
-        <style>
-            body, html {
-              width: 100%;
-              height: 100%;
-              margin: 0;
-              padding: 0;
-              overflow: hidden;
-            }
+  <head>
+      <meta charset="utf-8">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      <title>the crab & musket</title>
+      <meta name="description" content="">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link href='http://fonts.googleapis.com/css?family=Averia+Serif+Libre' rel='stylesheet' type='text/css'>
+      <link href='https://fonts.googleapis.com/css?family=PT+Serif:400,400italic' rel='stylesheet' type='text/css'>
+  </head>
+  <body>
+    <style>
+      body {
+        color: #444;
+        font-size: 1.25rem;
+        font-family: 'PT Serif', serif;
+        background-color: #fafafa;
+      }
 
-            body {
-              align-items: center;
-              display: flex;
-              justify-content: center;
-              color: #444;
-            }
+      #title {
+        font-family: 'Averia Serif Libre', serif;
+        font-size: 4rem;
+        margin-bottom: 0;
+        margin-top: 4rem;
+      }
 
-            #main {
-              margin-left: 10px;
-            }
+      #prefix {
+        display: block;
+        font-size: 2rem;
+      }
 
-            h1 {
-              font-family: 'Averia Serif Libre', serif;
-              font-size: 64px;
-              margin-bottom: 10px;
-            }
+      #subtitle {
+        font-style: italic;
+        font-size: 1rem;
+      }
 
-            h1 .prefix {
-              display: block;
-              font-size: 30px;
-            }
+      a {
+        color: #444;
+        text-decoration: none;
+        /*margin: 0 0.2rem;*/
+      }
 
-            a {
-              color: #44c;
-              text-decoration: none;
-              margin: 0 0.25em;
-            }
+      a:hover {
+        text-decoration: underline;
+      }
 
-            a:hover {
-              text-decoration: underline;
-            }
+      #avatar {
+        border-radius: 50%;
+        display: block;
+        margin: 2rem;
+      }
 
-            @media screen and (min-width: 350px) {
-              h1 {
-                margin-bottom: 0;
-              }
+      #links {
+        margin: 2rem;
+      }
 
-              h1 .prefix {
-                position: relative;
-                top: 20px;
-              }
+      #links span {
+        display: block;
+      }
 
-              a {
-                float: right;
-              }
-            }
-        </style>
-        <div id="main">
-            <h1><span class="prefix">the</span> crab<wbr>musket</h1>
-            <a href="https://eightyeight.github.io">blog</a>
-            <a href="https://github.com/eightyeight">code</a>
-        </div>
-    </body>
+      hr {
+        border-color: #eee;
+        margin: 2rem 4rem;
+        max-width: 40rem;
+      }
+    </style>
+
+    <center>
+      <h1 id="title"><span id="prefix">the</span> crab & musket</h1>
+      <p id="subtitle">is what I'd call a pub if I owned one.</p>
+      <img id="avatar" src="https://secure.gravatar.com/avatar/3fc8dc67b90083ba270eec63629bdd98?s=150"></img>
+      <div id="links">
+        <span>Check out my:</span>
+        <a href="https://twitter.com/crabmusket">tweets</a> /
+        <a href="http://blog.crabmusket.net">blog</a> /
+        <a href="https://github.com/eightyeight">code</a>
+      </div>
+    </center>
+  </body>
 </html>
